@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DesignPatterns</string>
+    <string name="title_home">创建类</string>
+    <string name="title_dashboard">行为型</string>
+    <string name="title_notifications">结构型</string>
+</resources>
