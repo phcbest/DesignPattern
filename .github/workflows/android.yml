@@ -42,6 +42,6 @@ jobs:
         # 上传apk到release
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
-          with:
-            name: Upload a Build
-            path: ${{ github.workspace }}/app/build/outputs/apk/release
+        with:
+          name: Upload a Build
+          path: ${{ github.workspace }}/app/build/outputs/apk/release
