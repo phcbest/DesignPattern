@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.phcbest.designpatterns.behaviorPattern.chainOfResponsibility.ChainOfResponsibilityDemo
+import com.phcbest.designpatterns.behaviorPattern.state.StateDemo
 import com.phcbest.designpatterns.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
@@ -26,6 +27,7 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         _binding?.btnChainOfResponsibility?.setOnClickListener(this::onClickListener)
+        _binding?.btnState?.setOnClickListener(this::onClickListener)
 
         return binding.root
     }
@@ -39,6 +41,9 @@ class DashboardFragment : Fragment() {
         when (view) {
             binding.btnChainOfResponsibility -> {
                 ChainOfResponsibilityDemo.doChainOfResponsibility(requireContext())
+            }
+            binding.btnState -> {
+                StateDemo.startDemo(requireContext())
             }
             else -> {}
         }
