@@ -1,13 +1,16 @@
 package com.phcbest.designpatterns.ui.notifications
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.phcbest.designpatterns.behaviorPattern.chainOfResponsibility.ChainOfResponsibilityDemo
+import com.phcbest.designpatterns.behaviorPattern.state.StateDemo
 import com.phcbest.designpatterns.databinding.FragmentNotificationsBinding
+import com.phcbest.designpatterns.structuralPattern.decorator.DecoratorActivity
 
 class NotificationsFragment : Fragment() {
 
@@ -26,13 +29,19 @@ class NotificationsFragment : Fragment() {
             ViewModelProvider(this).get(NotificationsViewModel::class.java)
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        _binding?.btnDecorator?.setOnClickListener(this::onClickListener)
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        return binding.root
+    }
+
+    private fun onClickListener(view: View?) {
+        when (view) {
+            binding.btnDecorator -> {
+                startActivity(Intent(requireContext(), DecoratorActivity::class.java))
+            }
+
+            else -> {}
         }
-        return root
     }
 
     override fun onDestroyView() {

@@ -12,4 +12,6 @@
 /captures
 .externalNativeBuild
 .cxx
+/app/debug
+/app/release
 local.properties
