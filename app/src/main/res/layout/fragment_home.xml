@@ -18,5 +18,11 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:text="建造者模式" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_factory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="工厂模式" />
     </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

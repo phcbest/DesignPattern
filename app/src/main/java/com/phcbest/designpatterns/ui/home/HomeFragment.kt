@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.phcbest.designpatterns.createPattern.builder.BuilderDemo
+import com.phcbest.designpatterns.createPattern.factory.FactoryDemo
 import com.phcbest.designpatterns.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         _binding?.btnBuilder?.setOnClickListener(this::onClickListener)
+        _binding?.btnFactory?.setOnClickListener(this::onClickListener)
 
         return binding.root
     }
@@ -36,6 +38,11 @@ class HomeFragment : Fragment() {
             binding.btnBuilder -> {
                 BuilderDemo.doDemoInline(requireContext())
             }
+
+            binding.btnFactory -> {
+                FactoryDemo.doDemo(requireContext())
+            }
+
             else -> {}
         }
 
