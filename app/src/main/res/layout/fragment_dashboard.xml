@@ -24,6 +24,12 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:text="状态模式" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_command"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="命令模式" />
     </GridLayout>
 
 </FrameLayout>
